@@ -1,0 +1,371 @@
+body {
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #ecf0f1;
+}
+
+header {
+    background: linear-gradient(to right, #3498db, #6c5b7b);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.canvas-container {
+    flex: 1;
+    overflow: auto;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    background: #ecf0f1;
+}
+
+canvas {
+    flex: 1;
+    border: 2px solid #ddd;
+    display: block;
+    margin: 0 auto;
+    background: #fff;
+    cursor: default;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.controls {
+    color: #fff;
+    width: 300px;
+    background: linear-gradient(to right, #3498db, #6c5b7b);
+    flex-direction: column;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.editor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    background: #ecf0f1;
+    transition: background 0.3s, box-shadow 0.3s;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+label {
+    margin-bottom: 10px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+input,
+select,
+button {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    background: #fff;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+input[type="color"] {
+    padding: 0;
+    height: 30px;
+    width: 30px;
+}
+
+button {
+    background: linear-gradient(to right, #27ae60, #86d27d);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(to right, #219d54, #72c28d);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.buttons button {
+    margin-right: 10px;
+}
+
+canvas:hover {
+    cursor: grab;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+    .controls {
+
+        padding: 10px;
+        width: 100%;
+    }
+
+    input,
+    select,
+    button {
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+
+}
+
+#size-input {
+    flex: 1;
+    margin-right: 5px;
+}
+
+#increase-size,
+#decrease-size {
+    background: linear-gradient(to right, #555, #999);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+#increase-size:hover,
+#decrease-size:hover {
+    background: linear-gradient(to right, #444, #888);
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .canvas-container {
+        overflow: visible;
+    }
+
+    header {
+
+        width: 100vw;
+    }
+
+    canvas {
+
+        height: 40vh;
+        width: 100%;
+    }
+
+    .controls {
+        width: 100%;
+        padding: 10px;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    canvas {
+        margin: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #ecf0f1;
+}
+
+header {
+    background: linear-gradient(to right, #3498db, #6c5b7b);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.canvas-container {
+    flex: 1;
+    overflow: auto;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    background: #ecf0f1;
+}
+
+canvas {
+    flex: 1;
+    border: 2px solid #ddd;
+    display: block;
+    margin: 0 auto;
+    background: #fff;
+    cursor: default;
+    transition: background 0.3s, box-shadow 0.3s;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+}
+
+.controls {
+    color: #fff;
+    width: 300px;
+    background: linear-gradient(to right, #3498db, #6c5b7b);
+    flex-direction: column;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.editor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    background: #ecf0f1;
+    transition: background 0.3s, box-shadow 0.3s;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+label {
+    margin-bottom: 10px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+input,
+select,
+button {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    background: #fff;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+input[type="color"] {
+    padding: 0;
+    height: 30px;
+    width: 30px;
+}
+
+button {
+    background: linear-gradient(to right, #27ae60, #86d27d);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(to right, #219d54, #72c28d);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.buttons button {
+    margin-right: 10px;
+}
+
+canvas:hover {
+    cursor: grab;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .canvas-container {
+        overflow: visible;
+    }
+
+    header {
+
+        width: 100vw;
+    }
+
+    .controls {
+        width: 100vw;
+        padding: 10px;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    canvas {
+        margin: 10px;
+    }
+} */
